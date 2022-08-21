@@ -1,0 +1,169 @@
+//  #1. Write a program to print MySirG 5 times on the screen
+
+#include<stdio.h>
+main()
+{
+    int i;
+    for(i=0;i<5;i++)
+    {
+        printf("MySirG");
+        printf("\n");
+    }
+}
+
+
+
+
+
+
+//  #2. Write a program to print the first 10 natural numbers.
+
+#include<stdio.h>
+main()
+{
+    int i;
+    for(i=1;i<=10;i++)
+    {
+        printf("%d ",i);
+    }
+}
+
+
+
+
+
+//  #3. Write a program to print the first 10 natural numbers in reverse order
+
+#include<stdio.h>
+main()
+{
+    int i;
+    for(i=10;i>=1;i--)
+    {
+        printf("%d ",i);
+    }
+}
+
+
+
+
+
+//  #4. Write a program to print the first 10 odd natural numbers
+
+#include<stdio.h>
+main()
+{
+    int i,num=1;
+    for(i=1;i<=10;i++)
+    {
+        printf("%d ",num);
+        num=num+2;
+    }
+}
+
+
+
+
+
+//  #5. Write a program to print the first 10 odd natural numbers in reverse order.
+
+#include<stdio.h>
+main()
+{
+    int i,num=19;
+    for(i=1;i<=10;i++)
+    {
+        printf("%d ",num);
+        num=num-2;
+    }
+}
+
+
+
+
+
+//  #6. Write a program to print the first 10 even natural numbers
+
+#include<stdio.h>
+main()
+{
+    int i,num=2;
+    for(i=1;i<=10;i++)
+    {
+        printf("%d ",num);
+        num=num+2;
+    }
+}
+
+
+
+
+
+//  #7. Write a program to print the first 10 even natural numbers in reverse order
+
+#include<stdio.h>
+main()
+{
+    int i,num=20;
+    for(i=1;i<=10;i++)
+    {
+        printf("%d ",num);
+        num=num-2;
+    }
+}
+
+
+
+
+
+//  #8. Write a program to print squares of the first 10 natural numbers
+#include<stdio.h>
+main()
+{
+    int i,num=1;
+    for(i=1;i<=10;i++)
+    {
+
+        printf("%d ",num*i);
+        num++;
+    }
+}
+
+
+
+
+
+
+//  #9. Write a program to print cubes of the first 10 natural numbers
+
+#include<stdio.h>
+main()
+{
+    int i,num=1;
+    for(i=1;i<=10;i++)
+    {
+
+        printf("\nCubes of %d = %d ",i,num*i*i);
+        num++;
+    }
+}
+
+
+
+
+
+
+
+//  #10. Write a program to print a table of 5
+
+#include<stdio.h>
+main()
+{
+    int i;
+    for(i=1;i<=10;i++)
+    {
+
+        printf("\n %d ",i*5);
+
+    }
+}
