@@ -1,0 +1,195 @@
+//  ##1. Write a program to print MySirG N times on the screen
+
+#include<stdio.h>
+main()
+{
+    int i,n;
+    printf("Enter a number");
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {
+        printf("MySirG");
+        printf("\n");
+    }
+}
+
+
+
+
+
+//  #2. Write a program to print the first N natural numbers.
+
+#include<stdio.h>
+main()
+{
+    int i,n;
+    printf("Enter any number");
+    scanf("%d",&n);
+    for(i=1;i<=n;i++)
+    {
+        printf("%d ",i);
+    }
+}
+
+
+
+
+
+//  #3. Write a program to print the first N natural numbers in reverse order
+
+#include<stdio.h>
+main()
+{
+    int i,n;
+    printf("Enter a number ");
+    scanf("%d",&n);
+    for(i=n1;i>=1;i--)
+    {
+        printf("%d ",i);
+    }
+}
+
+
+
+
+
+//   #4. Write a program to print the first N odd natural numbers
+
+#include<stdio.h>
+main()
+{
+    int i,num=1,n;
+    printf("Enter a number");
+    scanf("%d",&n);
+    for(i=1;i<=n;i++)
+    {
+        printf("%d ",num);
+        num=num+2;
+    }
+}
+
+
+
+
+
+//  #5. Write a program to print the first N odd natural numbers in reverse order.
+
+#include<stdio.h>
+main()
+{
+    int i,num,n;
+    printf("Enter a number");
+    scanf("%d",&n);
+    num=(n*2)-1;
+    for(i=1;i<=n;i++)
+    {
+        printf("%d ",num);
+        num=num-2;
+    }
+}
+
+
+
+
+
+
+
+//   #6. Write a program to print the first N even natural numbers
+
+#include<stdio.h>
+main()
+{
+    int i,num=2,n;
+    printf("Enter a number ");
+    scanf("%d",&n);
+    for(i=1;i<=n;i++)
+    {
+        printf("%d ",num);
+        num=num+2;
+    }
+}
+
+
+
+
+
+
+
+//   #7. Write a program to print the first N even natural numbers in reverse order
+
+#include<stdio.h>
+main()
+{
+    int i,num,n;
+    printf("Enter a number");
+    scanf("%d",&n);
+    num=n*2;
+    for(i=1;i<=n;i++)
+    {
+        printf("%d ",num);
+        num=num-2;
+    }
+}
+
+
+
+
+
+
+//    #8. Write a program to print squares of the first N natural numbers
+
+#include<stdio.h>
+main()
+{
+    int i,n,o;
+    printf("Enter a number ");
+    scanf("%d",&n);
+    for(i=1;i<=n;i++)
+    {
+        printf("%d ",i*i);
+    }
+}
+
+
+
+
+
+
+
+
+
+//  #9. Write a program to print cubes of the first N natural numbers
+
+#include<stdio.h>
+main()
+{
+    int i,n;
+    printf("Enter a  number ");
+    scanf("%d",&n);
+    for(i=1;i<=n;i++)
+    {
+
+        printf("\nCubes of %d = %d ",i,i*i*i);
+
+    }
+}
+
+
+
+
+
+
+
+//  #10. Write a program to print a table of N
+
+#include<stdio.h>
+main()
+{
+    int i,n;
+    printf("Enter a number ");
+    scanf("%d",&n);
+    for(i=1;i<=10;i++)
+    {
+        printf("%d ",i*n);
+    }
+}
