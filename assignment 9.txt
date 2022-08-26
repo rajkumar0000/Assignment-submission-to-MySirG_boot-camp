@@ -1,0 +1,331 @@
+//1. Write a program which takes the month number as an input and display number of days in that month.
+
+#include<stdio.h>
+main()
+{
+    int num;
+    while(1){
+    printf("\nEnter any month No. ,like 1,2.....12 : ");
+    scanf("%d",&num);
+
+    switch(num)
+    {
+        case 1: printf("31 Days in January month");
+        break;
+
+        case 2: printf("28 Days in February month\nAnd 29 Days in leep year");
+        break;
+
+        case 3: printf("31 Days in March");
+        break;
+
+        case 4: printf("30 Days in April");
+        break;
+
+        case 5: printf("31 Days in May");
+        break;
+
+        case 6: printf("30 Days in June");
+        break;
+
+        case 7: printf("31 days in July");
+        break;
+
+        case 8: printf("31 Days in August");
+        break;
+
+        case 9: printf("30 Days in September");
+        break;
+
+        case 10: printf("31 Days October");
+        break;
+
+        case 11: printf("30 Days in November");
+        break;
+
+        case 12: printf("31 Days in December");
+        break;
+        case -1 :return ;
+
+        default: printf("Invelid option");
+    }
+}
+
+}
+
+
+
+
+
+/* #2. Write a menu driven program with the following options:
+a. Addition
+b. Subtraction
+c. Multiplication
+d. Division
+e. Exit
+*/
+#include<stdio.h>
+main()
+{
+    int a,b;
+    char ch;
+    float c,d;ee
+    printf("a: Addition \nb: Subtraction \nc: Multiplication \nd: Division \ne: Exit \n");
+    scanf("%c",&ch);
+    switch(ch)
+    {
+        case 97 : printf("Enter two numbers ");
+        scanf("%d %d",&a,&b);
+        printf("%d",a+b);
+        break;
+
+        case 98 : printf("Enter two numbers ");
+        scanf("%d %d",&a,&b);
+        printf("%d",a-b);
+        break;
+
+        case 99 : printf("Enter two numbers ");
+        scanf("%d %d",&a,&b);
+        printf("%d",a*b);
+        break;
+
+        case 100 : printf("Enter two numbers ");
+        scanf("%f %f",&c,&d);
+        printf("%f",c/d);
+        break;
+
+        case 101 :printf("You are Exit in program ");
+        return;
+
+        default :printf("Invalid option");
+    }
+}
+
+
+
+
+
+//   #3. Write a program which takes the day number of a week and displays a unique greeting message for the day.
+
+#include<stdio.h>
+int main(int argc, char const *argv[])
+{
+    int num ;
+    printf("Enter day number");
+    scanf("%d",&num);
+    if(num<=7)
+    printf("this day of first week \nhave a great day ");
+    else if (num>7 && num<=14)
+    printf("second week \nhave a good day ");
+    else if(num>14 && num<=21)
+    printf("third week \nhave a nice day");
+    else if(num>21 && num<=31)
+    printf("fourth week \ngood good ");
+    else
+    printf("Invalid day");
+
+    return 0;
+}
+
+
+
+
+
+
+/*
+    #5. Convert the following if-else-if construct into switch case:
+if(var == 1)
+System.out.println("good");
+else if(var == 2)
+System.out.println("better");
+else if(var == 3)
+System.out.println("best");
+else
+System.out.println("invalid");
+*/
+
+#include<stdio.h>
+main()
+{
+
+    int num;
+    printf("enter a number ,1 to 3 ");
+    scanf("%d",&num);
+    switch(num)
+    {
+        case 1: printf("good");
+        break;
+
+        case 2: printf("better");
+        break;
+
+        case 3: printf("best");
+        break;
+
+        default : printf("invalid");
+        break;
+    }
+}
+
+
+
+
+
+
+
+//  #6. Program to check whether a year is a leap year or not. Using switch statement
+#include<stdio.h>
+main()
+{
+    int year,f=0;
+    printf("enter any year ");
+    scanf("%d",&year);
+    if(year%4==0)
+        f=f+1;
+    switch(f)
+    {
+        case 1 :printf("yes, leap year ");
+        break;
+
+        case 0 :printf("No ");
+        break;
+    }
+}
+
+
+
+
+
+
+
+
+/*  #7. Program to take the value from the user as input electricity unit charges
+and calculate total electricity bill according to the given condition . Using
+the switch statement.
+  For the first 50 units Rs. 0.50/unit
+  For the next 100 units Rs. 0.75/unit
+  For the next 100 units Rs. 1.20/unit
+  For units above 250 Rs. 1.50/unit
+  An additional surcharge of 20% is added to the bill.
+*/
+#include<stdio.h>
+main()
+{
+    int f=0;
+    char p=37;
+    float bill,pu,tex;
+    printf("Enter your metter Unit ");
+    scanf("%f",&bill);
+    if(bill>0 && bill<=50)
+        f=f+1;
+    if(bill>50&&bill<=100)
+        f=f+2;
+    if(bill>100&&bill<=250)
+        f=f+3;
+    if(bill>250)
+        f=f+4;
+
+    switch(f)
+    {
+        case 1 :pu=bill*0.50;
+                tex=((bill*0.5)*20)/100;
+                printf("your Unit - %f\n",bill);
+                printf("Bill - %f\n",pu);
+                printf("20%c Additional charge - %f\n",p,tex);
+                printf("Total Bill is - %f",pu+tex);
+                getch();
+                break;
+
+        case 2 :pu=bill*0.75;
+                tex=((bill*0.75)*20)/100;
+                printf("your Unit - %f\n",bill);
+                printf("Bill - %f\n",pu);
+                printf("20%c Additional charge - %f\n",p,tex);
+                printf("Total Bill is - %f",pu+tex);
+                getch();
+                break;
+
+        case 3 :pu=bill*1.2;
+                tex=((bill*1.2)*20)/100;
+                printf("your Unit - %f\n",bill);
+                printf("Bill - %f\n",pu);
+                printf("20%c Additional charge - %f\n",p,tex);
+                printf("Total Bill is - %f",pu+tex);
+                getch();
+                break;
+
+        case 4 :pu=bill*1.5;
+                tex=((bill*1.5)*20)/100;
+                printf("your Unit - %f\n",bill);
+                printf("Bill - %f\n",pu);
+                printf("20%c Additional charge - %d\n",p,tex);
+                printf("Total Bill is - %f",pu+tex);
+                getch();
+                break;
+    }
+}
+
+
+
+
+
+
+
+
+
+//  #8. Program to convert a positive number into a negative number and negative number into a positive number using a switch statement.
+
+#include<stdio.h>
+main()
+{
+    int number,f;
+    printf("Enter any number ");
+    scanf("%d",&number);
+    if(number>=0)
+        f=1;
+    else
+        f=0;
+    switch(f)
+    {
+        case 1 : printf("converted number is %d ",number*(-1));
+        break;
+
+        case 0 : printf("converted number is %d ",number*(-1));
+        break;
+    }
+
+}
+
+
+
+
+
+
+//   #9. Program to Convert even number into its upper nearest odd number Switch Statement.
+#include<stdio.h>
+main()
+{
+    int number,f;
+    printf("Enter any number ");
+    scanf("%d",&number);
+    if(number >=0)
+        f=1;
+    else
+        f=0;
+    switch(f)
+    {
+        case 1 : printf("nearest upper odd number is %d",number+1);
+        break;
+
+        case 0 : printf("nearest upper odd number is %d",number-1);
+        break;
+    }
+}
+
+
+
+
+
+
+
+//   #10. C program to find all roots of a quadratic equation using switch case
