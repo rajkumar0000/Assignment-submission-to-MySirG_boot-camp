@@ -1,0 +1,370 @@
+//  #1. Write a function to calculate LCM of two numbers. (TSRS)
+#include<stdio.h>
+int lcm (int a, int b);
+int main()
+{
+    int n1,n2 ,cal;
+    printf("Enter two numbers ");
+    scanf("%d %d",&n1,&n2);
+    cal=lcm(n1,n2);
+    printf("LCM is %d",cal);
+}
+
+int lcm (int a,int b)
+{
+    int i;
+    for(i=1;i<a*b;i++)
+    {
+        if((i%a)==0 && (i%b)==0)
+        {
+            return (i);
+        }
+
+    }
+}
+
+
+
+
+
+
+
+//  #2. Write a function to calculate HCF of two numbers. (TSRS)
+
+#include<stdio.h>
+int lcm (int a, int b);
+int main()
+{
+    int n1,n2 ,cal;
+    printf("Enter two numbers ");
+    scanf("%d %d",&n1,&n2);
+    cal=lcm(n1,n2);
+    printf("HCF is %d",cal);
+}
+
+int lcm (int a,int b)
+{
+    int i;
+    for(i=a<b?a:b;i>=1;i--)
+    {
+        if(a%i==0 && b%i==0)
+            return i;
+    }
+}
+
+
+
+
+
+
+//  #3. Write a function to check whether a given number is Prime or not. (TSRS)
+int prime(int val);
+#include<stdio.h>
+main()
+{
+    int  num,result;
+    printf("Enter a number ");
+    scanf("%d",&num);
+    result=prime(num);
+    if(result==1)
+    printf("this is prime number ");
+    else
+        printf("not a prime number ");
+}
+
+int prime(int val)
+{
+    if(val%2!=0)
+        return 1;
+        else
+            return 0;
+}
+
+
+
+
+
+
+//  #4. Write a function to find the next prime number of a given number. (TSRS)
+#include<stdio.h>
+int f1(int a);
+int f2(int a);
+main()
+{
+    int a ,b,c;
+    printf("Enter a number ");
+    scanf("%d",&a);
+    b=f1(a);
+    b>0?printf("your number is prime number\n"):printf("your number is not prime number\n");
+    if(b==1)
+    {
+        c=f2(a);
+        printf("And your next prime number is %d\n",c);
+    }
+}
+
+int f1(int a)
+{
+    int i;
+    if(a%2!=0)
+        return 1;
+    else
+        return 0;
+}
+
+int f2(int a)
+{
+    int i;
+    for(i=a+1; ;i++)
+    {
+        if(i%2!=0)
+            return i;
+    }
+}
+
+
+
+
+
+
+
+
+//   5. Write a function to print first N prime numbers (TSRN)
+#include<stdio.h>
+main()
+{
+    int n;
+    printf("Enter any positive int number ");
+    scanf("%d",&n);
+    f1(n);
+}
+
+void f1(int n)
+{
+    int i,j=0,f;
+    for(i=1;   ;i++)
+    {
+        if(i%2==0||i%3==0||i%5==0||i%7==0)
+        {
+            f=0;
+        }
+        else
+        {
+            f=1;
+        }
+        if(i==3){
+            printf("3 ");
+            j++;
+        }
+        if(i==5){
+            printf("5 ");
+            j++;
+        }
+        if(i==7){
+            printf("7 ");
+            j++;
+        }
+        if(f==1){
+            printf("%d ",i);
+            j++;
+        }
+        if(j==n)
+            break;
+
+    }
+}
+
+
+
+
+
+
+
+//   6. Write a function to print all Prime numbers between two given numbers. (TSRN)
+void f1(int n1,int n2);
+#include<stdio.h>
+main()
+{
+    int n1,n2;
+    printf("Enter any positive int number ");
+    scanf("%d %d",&n1,&n2);
+    f1(n1,n2);
+}
+
+void f1(int n1,int n2)
+{
+    int i,j=0,f;
+    for(i=n1; i<=n2  ;i++)
+    {
+        if(i%2==0||i%3==0||i%5==0||i%7==0)
+        {
+            f=0;
+        }
+        else
+        {
+            f=1;
+        }
+        if(i==3){
+            printf("3 ");
+        }
+        if(i==5){
+            printf("5 ");
+        }
+        if(i==7){
+            printf("7 ");
+        }
+        if(f==1){
+            printf("%d ",i);
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+//   #7. Write a function to print first N terms of Fibonacci series (TSRN)
+void febo(int n1, int n2,int l);
+#include<stdio.h>
+main()
+{
+    int n1,n2,l;
+    printf("Enter two numbers ");
+    scanf("%d %d",&n1,&n2);
+    printf("enter langth n terms ");
+    scanf("%d",&l);
+    febo(n1,n2,l);
+}
+
+void febo(int n1,int n2,int l)
+{
+    int i,a=0,b=1,c=0;
+    printf("%d %d ",n1,n2);
+    for(i=n1;i<=l;i++)
+    {
+        c=n1+n2;
+        printf("%d ",c);
+        n1=n2;
+        n2=c;
+        c=n1;
+    }
+}
+
+
+
+
+
+
+
+
+//  #8. Write a function to print PASCAL Triangle. (TSRN)
+#include<stdio.h>
+fectorial(int n);
+combination(int n,int r);
+pascle(int n);
+main()
+{
+    int n;
+    printf("Enter lines number ");
+    scanf("%d",&n);
+    pascle(n);
+}
+pascle(int n)
+{
+    int i,j,k;
+    for(i=0;i<=n;i++)
+    {
+        for(k=n;k>=i;k--)
+        {
+            printf("  ");
+        }
+        for(j=0;j<=i;j++)
+        {
+            printf("%3d ",combination(i,j));
+        }
+        printf("\n");
+    }
+}
+
+fectorial(int n)
+{
+    int i,b=1;
+    for(i=1;i<=n;i++)
+    {
+        b=b*i;
+    }
+    return b;
+}
+
+combination(int n,int r)
+{
+    int c;
+    c=fectorial(n)/(fectorial(r)*fectorial(n-r));
+    return c;
+}
+
+
+
+
+
+
+
+//   #9. Write a program in C to find the square of any number using the function.
+
+#include<stdio.h>
+main()
+{
+    int n,s;
+    printf("Enter anu number ");
+    scanf("%d",&n);
+    s=square(n);
+    printf("%d ",s);
+}
+
+int square(int n)
+{
+    return(n*n);
+}
+
+
+
+
+
+
+
+
+//   #10. Write a program in C to find the sum of the series 1! /1+2!/2+3!/3+4!/4+5!/5 using the function
+
+void f1(int);
+int fect (int);
+#include<stdio.h>
+int main()
+{
+    int n=5;
+    f1(n);
+}
+
+void f1(int n)
+{
+    int i,f=0;
+    for(i=1;i<=n;i++)
+    {
+        f=f+(fect(i)/i);
+    }
+    printf("%d ",f);
+}
+
+int fect(int n)
+{
+    int i,f=1;
+    for(i=1;i<=n;i++)
+    {
+        f=f*i;
+    }
+    return (f);
+}
