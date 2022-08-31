@@ -1,0 +1,351 @@
+//   #1. Write a function to calculate the area of a circle. (TSRS)
+#include<stdio.h>
+int radius_calculat(float r);
+main()
+{
+    float r,radius;
+    printf("Enter radius to calculate area of circle ");
+    scanf("%f",&r);
+    radius=radius_calculat(r);
+    printf("%f ",radius);
+
+}
+
+int radius_calculat(float r)
+{
+    float radius;
+    radius=3.14*r*r;
+    return radius;
+}
+
+
+
+
+//   #2. Write a function to calculate simple interest. (TSRS)
+#include<stdio.h>
+int interest_cal(float a,float b);
+main()
+{
+    float amount,interest,total,ans;
+    printf("Enter amount ");
+    scanf("%f",&amount);
+    printf("\nEnter intrest ");
+    scanf("%f",&interest);
+    ans=interest_cal(amount,interest);
+    printf("\n%f ",ans);
+}
+
+int interest_cal(float a,float b)
+{
+    return ((a*b)/100);
+}
+
+
+
+
+
+
+//  #3. Write a function to check whether a given number is even or odd. Return 1 if the  number is even, otherwise return 0. (TSRS)
+#include<stdio.h>
+int check(int n);
+main()
+{
+    int num,rt;
+    printf("Enter any number ");
+    scanf("%d",&num);
+    rt=check(num);
+    printf("%d ",rt);
+}
+
+int check(int n)
+{
+    if(n%2==0)
+        return 1;
+    else
+        return 0;
+}
+
+
+
+
+
+
+
+//   #4. Write a function to print first N natural numbers (TSRN)
+void printing (int num);
+#include<stdio.h>
+main()
+{
+    int n;
+    printf("Enter a number for printing langth ");
+    scanf("%d",&n);
+    printing(n);
+}
+
+void printing (int num)
+{
+    int i;
+    for(i=1;i<=num;i++)
+        printf("%d ",i);
+}
+
+
+
+
+
+
+
+//   #5. Write a function to print first N odd natural numbers. (TSRN)
+void printing (int num);
+#include<stdio.h>
+main()
+{
+    int n;
+    printf("Enter a number for printing langth ");
+    scanf("%d",&n);
+    printing(n);
+}
+
+void printing (int num)
+{
+    int i;
+    for(i=1;i<=num*2;i++)
+    {
+        if(i%2!=0)
+        printf("%d ",i);
+    }
+}
+
+
+
+
+
+
+//   #6. Write a function to calculate the factorial of a number. (TSRS)
+int fectorial(int n);
+#include<stdio.h>
+main()
+{
+    int num,fect;
+    printf("Enter a number for calculat fectorial ");
+    scanf("%d",&num);
+    fect=fectorial(num);
+    printf("Fectorial is %d ",fect);
+}
+
+int fectorial(int n)
+{
+    int i=1,b=1;
+    for(i;i<=n;i++)
+    {
+        b=b*i;
+    }
+    return b;
+}
+
+
+
+
+
+
+
+//   #7. Write a function to calculate the number of combinations one can make from n items #and r selected at a time. (TSRS)
+int com(int n,int r);
+int fec(int n);
+#include<stdio.h>
+int main()
+{
+    int n ,r,c;
+    printf("Enter two valus like n r : ");
+    scanf("%d %d",&n,&r);
+    c=com(n,r);
+    printf("%d ",c);
+}
+
+int com(int n,int r)        // This is combination function
+{
+    return fec(n)/(fec(r)*fec(n-r));
+}
+
+int fec(int n)              //This is fectorial function
+{
+    int i,f=1;
+    for(i=1;i<=n;i++)
+    {
+        f=(f*i);
+    }
+    return(f);
+}
+
+
+
+
+
+
+
+
+//   #8. Write a function to calculate the number of arrangements one can make from n items and r selected at a time. (TSRS)
+int arreng(int n,int r);
+int fec(int n);
+#include<stdio.h>
+main()
+{
+    int n,r,p;
+    printf("Enter two numbers like n r: ");
+    scanf("%d %d",&n,&r);
+    p=arreng(n,r);
+    printf("%d ",p);
+}
+
+int arreng(int n,int r)
+{
+    return(fec(n)/(fec(n-r)));
+}
+
+int fec(int n)
+{
+    int i,f=1;
+    for(i=1;i<=n;i++)
+    {
+        f=f*i;
+    }
+    return f;
+}
+
+
+
+
+
+
+
+//  #9. Write a function to check whether a given number contains a given digit or not. (TSRS)
+int fun(int ,int);
+#include<stdio.h>
+int main()
+{
+    int num=54637,n=4,f;
+    f=fun(num,n);
+    if(f==1)
+        printf("Yes ");
+    else
+        printf("No ");
+}
+int fun(int num,int n)
+{
+    while(num!=0)
+    {
+        if(num%10==n)
+        {
+        return 1;
+        }
+        else
+        {
+        num=num/10;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+//   #10. Write a function to print all prime factors of a given number. For example, if the number is 36 then your result should be 2, 2, 3, 3. (TSRN)
+
+#include<stdio.h>
+main()
+{
+    int n=36;
+    f1(n);
+}
+
+f1(int n)
+{
+    int i;
+    while(n!=1)
+    {
+        for(i=1;i<=n;i++)
+        {
+            if(n%2==0)
+            {
+                n=n/2;
+                printf("2 ");
+            }
+        }
+        for(i=1;i<=n;i++)
+        {
+            if(n%3==0)
+            {
+                n=n/3;
+                printf("3 ");
+            }
+        }
+        for(i=1;i<=n;i++)
+        {
+            if(n%5==0)
+            {
+                n=n/5;
+                printf("5 ");
+            }
+        }
+        for(i=1;i<=n;i++)
+        {
+            if(n%7==0)
+            {
+                n=n/7;
+                printf("7 ");
+            }
+        }
+        for(i=1;i<=n;i++)
+        {
+            if(n%11==0)
+            {
+                n=n/11;
+                printf("11 ");
+            }
+        }
+        for(i=1;i<=n;i++)
+        {
+            if(n%13==0)
+            {
+                printf("13 ");
+                n=n/13;
+
+            }
+        }
+        for(i=1;i<=n;i++)
+        {
+            if(n%17==0)
+            {
+                printf("17 ");
+                n=n/17;
+
+            }
+        }
+        for(i=1;i<=n;i++)
+        {
+            if(n%19==0)
+            {
+                printf("19 ");
+                n=n/19;
+
+            }
+        }
+        for(i=1;i<=n;i++)
+        {
+            if(n%n==0)
+            {
+                printf("%d ",n);
+                n=n/n;
+
+            }
+        }
+
+    }
+}
+
+
