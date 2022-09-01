@@ -206,19 +206,14 @@ main()
 #include<stdio.h>
 main()
 {
-    int n,mod,res;
+    int n,mod,res=0;
     printf("Enter any number ");
-    scanf("%d",&n);
+    scanf("%d",&n);                     
     while(n !=0 )
     {
-        mod=n%10;
-        n=n/10;
-        res=res*10 +mod;
-        if(res==0){
-            printf("0");
-        }
+        mod=n%10;           
+        n=n/10;            
+        res=res*10 +mod;    
     }
     printf("%d",res);
 }
-
-
