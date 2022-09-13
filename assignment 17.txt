@@ -1,0 +1,317 @@
+//   #1. Write a program to calculate the length of the string. (without using built-in method)
+#include<stdio.h>
+main()
+{
+    char a[100];
+    int i,count=-1 ;
+    printf("Enter a string ,up to 100 charecters - \n");
+    fgets(a,100,stdin);
+    for(i=0; a[i];i++)
+        count++;
+    printf("\nlength of string is - %d ",count);
+}
+
+
+
+
+
+
+
+//   #2. Write a program to count the occurrence of a given character in a given string
+
+#include<stdio.h>
+main()
+{
+    int count=0,lnth;
+    char a[100],ch;
+    printf("Enter a string : ");
+    fgets(a,100,stdin);
+    fflush(stdin);
+    printf("\nEnter a occurrence chareter : ");
+    scanf("%c",&ch);
+    lnth=strlen(a);
+    for(int i=0; i<lnth;i++)
+    {
+        if(ch == a[i])
+            count++;
+    }
+    if(count>0)
+        printf("Yes , '%c' %d times in string ",ch,count);
+    else
+        printf("Oops sorry ,No matched ");
+
+}
+
+
+
+
+
+
+
+
+
+
+
+//   #3. Write a program to count vowels in a given string
+vowel(char);
+#include<stdio.h>
+main()
+{
+    char a[100];
+    int i,count=0 ;
+    printf("Enter a string ,up to 100 charecters - \n");
+    fgets(a,100,stdin);
+    for(i=0; a[i];i++)
+        {
+            if(vowel(a[i]))
+                count++;
+        }
+    printf("\nvowels in string is - %d ",count);
+    return 0;
+}
+vowel(char ch)
+{
+    char a[10]={'a','e','i','o','u','A','E','I','O','U'};
+    for(int i=0;i<10;i++)
+    {
+        if(ch==a[i])
+            return 1;
+    }
+        return 0;
+}
+
+
+
+
+
+
+
+
+
+//   #4. Write a program to convert a given string into uppercase
+
+#include<stdio.h>
+main()
+{
+    char a[100];
+    int i,count=-1 ;
+    printf("Enter a string ,up to 100 charecters in lower case - \n");
+    fgets(a,100,stdin);
+    for(i=0;a[i];i++)
+        count++;
+    printf("Your string convert in upper case -");
+    for(i=0; i<count ;i++)
+        printf("%c",a[i]-32);
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+//   #5. Write a program to convert a given string into lowercase
+
+#include<stdio.h>
+main()
+{
+    char a[100];
+    int i,count=0 ,x;
+    printf("Enter a string ,up to 100 charecters in UPPER case - \n");
+    fgets(a,100,stdin);
+    for(i=0;a[i];i++)
+        count++;
+    printf("Your string convert in lower case -");
+    for(i=0; i<count-1 ;i++)
+    {
+        x=a[i];
+        if(x==32)
+            printf(" ");
+        else
+        printf("%c",a[i]+32);
+    }
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+//   #6. Write a program to reverse a string.
+
+#include<stdio.h>
+main()
+{
+    char a[100];
+    int i,count=0 ,x;
+    printf("Enter a string ,up to 100 charecters - \n");
+    fgets(a,100,stdin);
+    for(i=0;a[i];i++)
+        count++;
+    printf("Reverse string -");
+    for(i=count-1;i>=0  ;i--)
+        printf("%c",a[i]);
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+//   #7. Write a program in C to count the total number of alphabets, digits and special
+//       characters in a string.
+
+#include<stdio.h>
+main()
+{
+    char a[100];
+    int i,count=0,alpha=0,digit=0,spcial=0,x;
+    system("color fc");
+    printf("Enter a string ,up to 100 charecters - \n");
+    fgets(a,100,stdin);
+    for(i=0;a[i];i++)
+        count++;
+    for(i=0;i<count-1;i++)
+    {
+        x=a[i];
+        if(x>=48&&x<=57)
+            digit++;
+        else if(x>=65&&x<=90||x>=97&&x<=122)
+            alpha++;
+        else
+            spcial++;
+    }
+    printf("\nTotal Digit in string - %d",digit);
+    printf("\nTotal Alphabet in string - %d",alpha);
+    printf("\nTotal Special charecter in string - %d",spcial);
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+//   #8. Write a program in C to copy one string to another string.
+
+#include<stdio.h>
+main()
+{
+    char a[100],b[100];
+    int i,count=0;
+    system("color fc");
+    printf("Enter a string ,up to 100 charecters - \n");
+    fgets(a,100,stdin);
+    for(i=0;a[i];i++)
+        count++;
+    for(i=0;i<count-1;i++)
+        b[i]=a[i];
+    printf("%s",b);
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+//   #9. Write a C program to sort a string array in ascending order.
+
+#include<stdio.h>
+main()
+{
+    char a[100],ch;
+    int i,j,count=0;
+    system("color fc");
+    printf("Enter a string ,up to 100 charecters - \n");
+    fgets(a,100,stdin);
+    for(i=0;a[i];i++)
+        count++;
+    for(i=0;i<count-1;i++)
+    {
+        for(j=i+1;j<count-1;j++)
+        {
+            if(a[i]>a[j])
+            {
+                ch=a[j];
+                a[j]=a[i];
+                a[i]=ch;
+            }
+        }
+    }
+    printf("\nShorted string is - %s",a);
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+//   #10. Write a program in C to Find the Frequency of Characters
+
+#include<stdio.h>
+int check(char x,char y[],int n)
+{
+    for (int i=0; i<n;i++)
+    {
+        if(x==y[i])
+            return 0;
+    }
+    return 1;
+}
+main()
+{
+    char a[100],b[100],c[100];
+    int i,j,count=0,count2;
+    printf("Enter a string ,up to 100 charecters - \n");
+    fgets(a,100,stdin);
+    for(i=0;a[i];i++)
+        count++;
+    for(i=0;i<count-1;i++)
+    {
+        count2=1;
+        for(j=i+1;j<count-1;j++)
+        {
+            if(a[i]==a[j])
+            {
+               count2++;
+            }
+            b[i]=count2;
+        }
+    }
+    for(i=0;i<count-1;i++)
+    {
+        if(check(a[i],c,count))
+        printf("\n%c - %d",a[i],b[i]);
+        c[i]=a[i];
+    }
+
+    return 0;
+}
