@@ -1,0 +1,219 @@
+//  #1. Write a recursive function to calculate sum of first N natural numbers
+int f1(int);
+#include<stdio.h>
+int main()
+{
+    int n;
+    printf("Enter a number ");
+    scanf("%d",&n);
+    printf("%d ",f1(n));
+}
+
+int f1(int n)
+{
+    if(n==0)
+        return 0;
+    n=n+f1(n-1);
+    return n;
+}
+
+
+
+
+
+
+
+//  #2. Write a recursive function to calculate sum of first N odd natural numbers
+int f1(int);
+#include<stdio.h>
+int main()
+{
+    int n;
+    printf("Enter a number ");
+    scanf("%d",&n);
+    printf("%d ",f1(n));
+}
+int f1(int n)
+{
+    int a;
+    if(n==0)
+        return 0;
+    a=(n*2-1)+f1(n-1);
+    return a;
+}
+
+
+
+
+
+
+
+
+//  #3. Write a recursive function to calculate sum of first N odd natural numbers
+int f1(int);
+#include<stdio.h>
+int main()
+{
+    int n;
+    printf("Enter a number ");
+    scanf("%d",&n);
+    printf("%d ",f1(n));
+}
+
+int f1(int n)
+{
+    int a;
+    if(n==0)
+        return 0;
+    a=(n*2)+f1(n-1);
+    return a;
+}
+
+
+
+
+
+
+
+
+
+//   #4. Write a recursive function to calculate sum of squares of first n natural numbers
+int recurtion (int n);
+#include<stdio.h>
+int main()
+{
+    int n;
+    printf("Enter Nth number ");
+    scanf("%d",&n);
+    printf("%d ",recurtion(n) );
+}
+
+int recurtion (int n)
+{
+    int a;
+    if(n==1)
+        return 1;
+    a=n*n+recurtion(n-1);
+    return a;
+}
+
+
+
+
+
+
+
+
+//   #5. Write a recursive function to calculate sum of digits of a given number
+int recurtion (int n);
+#include<stdio.h>
+int main()
+{
+    int n;
+    printf("Enter a number ");
+    scanf("%d",&n);
+    printf("%d ",recurtion(n) );
+}
+
+int recurtion (int n)
+{
+    int a;
+    if(n==0)
+        return 0;
+    a=n%10;
+    a=a+recurtion(n/10);
+    return a;
+}
+
+
+
+
+
+
+
+//   #6. Write a recursive function to calculate factorial of a given number
+int recurtion (int n);
+#include<stdio.h>
+int main()
+{
+    int n;
+    printf("Enter a number ");
+    scanf("%d",&n);
+    printf("%d ",recurtion(n) );
+}
+
+int recurtion (int n)
+{
+    int a;
+    if(n==1)
+        return 1;
+    a=n*recurtion(n-1);
+    return a;
+}
+
+
+
+
+
+
+
+
+//   #7. Write a recursive function to calculate HCF of two numbers
+int recurtion (int ,int);
+#include<stdio.h>
+int main()
+{
+    int n1,n2,r;
+    printf("Enter a number ");
+    scanf("%d %d",&n1,&n2);
+    if(n1<n2)
+    {
+        n2=n1+n2;
+        n1=n2-n1;
+        n2=n2-n1;
+    }
+    r=recurtion(n1,n2);
+    printf("%d ",r);
+}
+
+int recurtion (int a,int b)
+{
+    if(b==0)
+        return a;
+    recurtion(b,a%b);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//   #9. Write a program in C to count the digits of a given number using recursion.
+int recurtion (int n);
+#include<stdio.h>
+int main()
+{
+    int n;
+    printf("Enter a number up to 10 digits: ");
+    scanf("%d",&n);
+    printf("%d ",recurtion(n) );
+}
+
+int recurtion (int n)
+{
+    int a,b=1;
+    if(n==0)
+        return n;
+    a=recurtion(n/10);
+    b=b+a;
+    return b;
+}
