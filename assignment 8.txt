@@ -35,6 +35,9 @@ main()
 
 
 
+
+
+
 // Write a program to draw the following patterns
 //#2.
 /*      *
@@ -66,6 +69,10 @@ main()
         printf("\n\n");
     }
 }
+
+
+
+
 
 
 
@@ -109,6 +116,8 @@ main()
 
 
 
+
+
 // Write a program to draw the following patterns
 //#.4
 /*
@@ -139,6 +148,11 @@ main()
 
     }
 }
+
+
+
+
+
 
 
 
@@ -182,6 +196,10 @@ main()
 
 
 
+
+
+
+
 //  #6. Write a program to draw the following patterns
 /*
 
@@ -214,6 +232,9 @@ main()
         printf("\n\n");
     }
 }
+
+
+
 
 
 
@@ -256,6 +277,226 @@ main()
     }
 }
 
+
+
+
+
+
+
+
+
+
+//  Write a program to draw the following patterns:
+/*
+ #8.
+ 
+     1
+    121
+   12321
+  1234321
+ 123454321
+
+ */
+#include<stdio.h>
+int main()
+{
+    for(int i=1;i<=5;i++)
+    {
+        for(int j=5;j>=i;j--)
+        {
+            printf(" ");
+        }
+        for(int j=1;j<=i;j++)
+        {
+            printf("%d",j);
+        }
+        for(int j=i-1;j>=1;j--)
+        {
+            printf("%d",j);
+        }
+        printf("\n");
+    }
+
+}
+
+
+
+
+
+
+
+
+
+//  Write a program to draw the following patterns:
+/*
+#9.
+
+ 123454321
+  1234321
+   12321
+    121
+     1
+
+ */
+#include<stdio.h>
+int main()
+{
+    for(int i=1;i<=5;i++)
+    {
+        for(int j=1;j<=i;j++)
+            printf(" ");
+        for(int j=1;j<=6-i;j++)
+            printf("%d",j);
+        for(int j=5-i;j>=1;j--)
+            printf("%d",j);
+        printf("\n");
+    }
+
+}
+
+
+
+
+
+
+
+
+
+//  Write a program to draw the following patterns:
+/*
+#10.
+
+123454321
+1234 4321
+123   321
+12     21
+1       1
+
+ */
+#include<stdio.h>
+int main()
+{
+    for(int i=1;i<=5;i++)
+    {
+        for(int j=1;j<=6-i;j++)
+            printf("%d",j);
+        for(int j=3;j<i*2;j++)
+            printf(" ");
+        for(int j=6-i;j>=1;j--)
+        {
+            if(j==5)
+                continue;
+            printf("%d",j);
+        }
+        printf("\n");
+    }
+}
+
+
+
+
+
+
+
+
+
+
+//  Write a program to draw the following patterns:
+/*
+#11.
+        A
+      A B A
+    A B C B A
+  A B C D C B A
+A B C D E D C B A
+
+ */
+#include<stdio.h>
+int main()
+{
+    for(int i=1;i<=5;i++)
+    {
+        for(int j=5;j>i;j--)
+            printf("  ");
+        for(int j=65;j<65+i;j++)
+            printf("%c ",j);
+        for(int j=63+i;j>=65;j--)
+            printf("%c ",j);
+        printf("\n");
+    }
+}
+
+
+
+
+
+
+
+
+
+//  Write a program to draw the following patterns:
+/*
+#12.
+  A B C D E D C B A
+    A B C D C B A
+      A B C B A
+        A B A
+          A
+ */
+#include<stdio.h>
+int main()
+{
+    for(int i=1;i<=5;i++)
+    {
+        for(int j=1;j<=i;j++)
+            printf("  ");
+        for(int j=65;j<=70-i;j++)
+            printf("%c ",j);
+        for(int j=69-i;j>=65;j--)
+            printf("%c ",j);
+        printf("\n");
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+//  Write a program to draw the following patterns:
+/*
+#13.
+ABCDEFGFEDCBA
+ABCDEF FEDCBA
+ABCDE   EDCBA
+ABCD     DCBA
+ABC       CBA
+AB         BA
+A           A
+*/
+#include<stdio.h>
+int main()
+{
+    for(int i=1;i<=7;i++)
+    {
+        for(int j=65;j<73-i;j++)
+            printf("%c",j);
+        for(int j=3;j<i*2;j++)
+            printf(" ");
+        for(int j=72-i;j>=65;j--)
+        {
+            if(j==71)
+                continue;
+            printf("%c",j);
+        }
+        printf("\n");
+    }
+}
 
 
 
