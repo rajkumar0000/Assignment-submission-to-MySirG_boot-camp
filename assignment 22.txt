@@ -1,0 +1,332 @@
+//   #1. Define a function to input variable length string and store it in an array without
+//       memory wastage.
+
+#include<stdio.h>
+#include<malloc.h>
+void main()
+{
+    char *ptr,c;
+    ptr=(char*)malloc(sizeof(char));
+    int i=0,j=1;
+    printf("Enter string : ");
+
+   for(i=0; ;i++)
+    {
+        if(c=='\n')
+            break;
+        c=getc(stdin);
+        j++;
+        ptr=(char*)realloc(ptr,j*sizeof(char));
+        ptr[i]=c;
+
+    }
+    ptr[i]='\0';
+    printf("%s",ptr);
+    free(ptr);
+}
+
+
+
+
+
+
+
+
+
+
+/*2. Write a program to ask the user to input a number of data values he would like to
+    enter then create an array dynamically to accommodate the data values. Now take
+    the input from the user and display the average of data values. */
+
+#include<stdio.h>
+#include<malloc.h>
+int main()
+{
+    int *ptr  ,n , t=0;
+    printf("Enter how input number : ");
+    scanf("%d",&n);
+    ptr=(int*)calloc(n,sizeof(int));
+    if(ptr==NULL)
+    {
+        printf("Memmory allocation Failed ");
+        return 0;
+    }
+    printf("Enter Elements\n");
+    for(int i=0;i<n;i++)
+        scanf("%d",ptr+i);
+    for(int i=0;i<n;i++)
+        t=t+*(ptr+i);
+    t=t/n;
+    printf("Avg. is %d");
+	free(ptr);
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+// #3. Write a program to calculate the sum of n numbers entered by the user using malloc and free.
+
+#include<stdio.h>
+#include<malloc.h>
+int main()
+{
+    int *ptr  ,n , t=0;
+    printf("Enter how input number : ");
+    scanf("%d",&n);
+    ptr=(int*)calloc(n,sizeof(int));
+    if(ptr==NULL)
+    {
+        printf("Memmory allocation Failed ");
+        return 0;
+    }
+    printf("Enter Elements\n");
+    for(int i=0;i<n;i++)
+        scanf("%d",ptr+i);
+    for(int i=0;i<n;i++)
+        t=t+*(ptr+i);
+    printf("Sum is %d",t);
+    free(ptr);
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+// #4. Write a program to input and print text using dynamic memory allocation.
+#include<stdio.h>
+#include<malloc.h>
+int main()
+{
+    int i=0,j=0;
+    char *ch_ptr , c ;
+    ch_ptr=(char*)malloc(sizeof(char));
+    printf("Enter text : ");
+    while(c!='\n')
+    {
+        j++;
+        c=getc(stdin);
+        realloc(ch_ptr,j*(sizeof(char)));
+        ch_ptr[i]=c;
+        i++;
+    }
+    printf("Your text is >\n%s",ch_ptr);
+    free(ch_ptr);
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*    #5. Write a program to read a one dimensional array, print sum of all elements along with
+            inputted array elements using dynamic memory allocation  */
+
+#include<stdio.h>
+#include<malloc.h>
+int main()
+{
+    int i=0,j=0 , sum=0,size;
+    int *ptr ;
+    printf("Enter Size of element : ");
+    scanf("%d",&size);
+    ptr=(int*)calloc(size,sizeof(int));
+    if(ptr==NULL)
+    {
+        printf("Memory alocation faild ");
+        return 0;
+    }
+    printf("Enter numbers for sum : ");
+    for(i=0;i<size;i++)
+        scanf("%d",ptr+i);
+    for(int i=0;i<size;i++)
+        sum=sum+*(ptr+i);
+    printf("\nSum is %d ",sum);
+    free(ptr);
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+/*    6. Write a program in C to find the largest element using Dynamic Memory Allocation.  */
+
+#include<stdio.h>
+#include<malloc.h>
+int main()
+{
+    int size=5;
+    int *ptr ;
+    ptr=(int*)calloc(size,sizeof(int));
+    printf("Enter 5 number : ");
+    for(int i=0;i<5;i++)
+        scanf("%d",ptr+i);
+    for(int i=0;i==0;i++)
+    {
+        for(int j=i+1;j<5;j++)
+        {
+            if(*(ptr+i)<*(ptr+j))
+            {
+                int hold=*(ptr+i);
+                *(ptr+i)=*(ptr+j);
+                *(ptr+j)=hold;
+            }
+        }
+    }
+    printf("max number is %d",*ptr);
+    free(ptr);
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*    7. Write a program to demonstrate memory leak in C.  */
+
+#include<stdio.h>
+#include<malloc.h>
+int main()
+{
+    int size=5;
+    int *ptr ;
+    (int*)calloc(size,sizeof(int));
+    for(int i=0;i<5;i++)
+        scanf("%d",ptr+i);
+        for(int i=0;i<5;i++)
+            printf("%d",*(ptr+i));
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*  8. Write a program to demonstrate dangling pointers in C.  */
+
+#include<stdio.h>
+#include<malloc.h>
+int main()
+{
+    int size=5;
+    int *ptr ;
+    ptr=(int*)calloc(size,sizeof(int));
+    free(ptr);
+    printf("Enter 5 number : ");
+    for(int i=0;i<5;i++)
+        scanf("%d",ptr+i);
+    for(int i=0;i<5;i++)
+    printf("%d\n",*(ptr+i));
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+/*  9. Write a program to allocate memory dynamically of the size in bytes entered by the
+           user. Also handle the case when memory allocation is failed.
+  */
+
+#include<stdio.h>
+#include<malloc.h>
+int main()
+{
+    int size;
+    int *ptr ;
+    printf("Enter size : ");
+    scanf("%d",&size);
+    ptr=(int*)calloc(size,sizeof(int));
+    if(ptr==NULL)
+    {
+        printf("Memory alocation is faild ");
+        return 0;
+    }
+    else
+        printf("Memory alocation succesefull ");
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* 10. Find out the maximum and minimum from an array using dynamic memory allocation in C  */
+
+#include<stdio.h>
+#include<malloc.h>
+int main()
+{
+    int size;
+    int *ptr ;
+    printf("Enter size : ");
+    scanf("%d",&size);
+    ptr=(int*)calloc(size,sizeof(int));
+    for(int i=0;i<5;i++)
+        scanf("%d",ptr+i);
+    for(int i=0;i<5;i++)
+    {
+        for(int j=i+1;j<5;j++)
+        {
+            if(*(ptr+i)>*(ptr+j))
+            {
+                int hold=ptr[i];
+                ptr[i]=ptr[j];
+                ptr[j]=hold;
+            }
+        }
+    }
+    printf("Minimum Number is %d\nmaximum number is %d",ptr[0],ptr[4]);
+    return 0;
+}
